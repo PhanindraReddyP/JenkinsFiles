@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage ('SCM') {
 			steps {
-				git clone https://github.com/PhanindraReddyP/test.git
+				git clone 'https://github.com/PhanindraReddyP/test.git'
 			}
 		}
 		stage ('Build') {
