@@ -2,12 +2,12 @@ pipeline {
 	agent any
 	stages {
 		stage ('SCM') {
-			steps {
+			step {
 				git clone 'https://github.com/PhanindraReddyP/test.git'
 			}
 		}
 		stage ('Build') {
-			steps {
+			step {
 				sh 'mvn clean package'
 			}
 		}
