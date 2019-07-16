@@ -9,7 +9,7 @@ pipeline {
 		}
 		stage ('Build') {
 			steps {
-				maven 'mvn clean package'
+				mvn 'clean package'
 				echo 'Package Built'
 			}
 		}
