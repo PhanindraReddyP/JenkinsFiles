@@ -1,24 +1,17 @@
 pipeline {
 	agent any
 	stages {
+		stage ('Clone') {
+			steps {
+				git 'https://github.com/PhanindraReddyP/test.git'
+				echo 'Repository Cloned!!'
+			}
+		}
 		stage ('Build') {
 			steps {
 				withMaven(maven : 'Maven') {
 				sh 'mvn clean package'
-				}
-			}
-		}
-		stage ('Test') {
-			steps {
-				withMaven(maven : 'Maven') {
-				sh 'mvn test'
-				}
-			}
-		}
-		stage ('Deploy') {
-			steps {
-				withMaven(maven : 'Maven') {
-				sh 'mvn deploy'
+				echo 'Package Built'
 				}
 			}
 		}
