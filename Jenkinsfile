@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage ('Clone') {
 			steps {
-				git 'https://github.com/PhanindraReddyP/test.git'
+				git 'https://github.com/PhanindraReddyP/shopizer.git'
 				echo 'Repository Cloned!!'
 			}
 		}
@@ -11,6 +11,7 @@ pipeline {
 			steps {
 				sh 'mvn clean package'
 				echo 'Package Built'
+				archiveArtifacts '**/*.jar'
 			}
 		}
 	}
