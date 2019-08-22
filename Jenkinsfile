@@ -10,7 +10,7 @@ pipeline {
 		stage ('Build') {
 			steps {
 				tool name: 'MAVEN3.3.9', type: 'maven'
-				sh 'sudo mvn clean package'
+				sh 'mvn clean package'
 				echo 'Package Built'
 				archiveArtifacts '**/*.jar'
 			}
