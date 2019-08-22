@@ -9,8 +9,8 @@ pipeline {
 		}
 		stage ('Build') {
 			steps {
-				tool name: 'MAVEN3.3.9', type: 'maven'
-				sh 'maven clean package'
+				def M2_HOME = tool name: 'MAVEN3.3.9', type: 'maven'
+				sh '{M2_HOME}/bin/mvn clean package'
 				echo 'Package Built'
 				archiveArtifacts '**/*.jar'
 			}
