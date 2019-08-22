@@ -9,7 +9,7 @@ pipeline {
 		}
 		stage ('Build') {
 			steps {
-				sh 'mvn clean package'
+				bash 'mvn clean package'
 				echo 'Package Built'
 				archiveArtifacts '**/*.jar'
 			}
