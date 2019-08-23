@@ -7,7 +7,7 @@ pipeline {
 	stages {
 		stage ('Clone') {
 			steps {
-				git 'https://github.com/PhanindraReddyP/shopizer.git'
+				git 'https://github.com/wakaleo/game-of-life.git'
 				echo 'Repository Cloned!!'
 			}
 		}
