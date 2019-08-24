@@ -29,7 +29,7 @@ pipeline {
 			steps {
 				script {
 					pom = readMavenPom file: "pom.xml";
-					filesByGlob = findFiles(glob: "/var/lib/jenkins/workspace/game-of-life/gameoflife-web/target/*.war");
+					filesByGlob = findFiles(glob: "**/*.war");
 					echo "${filesByGlob[0].name} ${filesByGlob[0].path}"
 					artifactPath = ${filesByGlob[0].path};
 					artifactExists = fileExists artifactPath;
