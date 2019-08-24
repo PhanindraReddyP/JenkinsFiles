@@ -39,7 +39,7 @@ pipeline {
 							nexusVersion: NEXUS_VERSION,
 							protocol: NEXUS_PROTOCOL,
 							nexusUrl: NEXUS_URL,
-							groupId: com.gameoflife,
+							groupId: "gameoflife",
 							version: 1.0,
 							repository: NEXUS_REPOSITORY,
 							credentials: NEXUS_CREDENTIAL_ID,
