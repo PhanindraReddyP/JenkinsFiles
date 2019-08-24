@@ -40,7 +40,7 @@ pipeline {
 							protocol: NEXUS_PROTOCOL,
 							nexusUrl: NEXUS_URL,
 							groupId: "gameoflife",
-							version: 1.0,
+							version: "1.0",
 							repository: NEXUS_REPOSITORY,
 							credentials: NEXUS_CREDENTIAL_ID,
 							artifacts: [
