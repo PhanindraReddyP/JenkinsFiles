@@ -34,7 +34,7 @@ pipeline {
 					artifactPath = ${filesByGlob[0].path};
 					artifactExists = fileExists artifactPath;
 					if(artifactExists) {
-						echo *** File: ${artifactPath} ***
+						echo "*** File: ${artifactPath} ***"
 						nexusArtifactUploader(
 							nexusVersion: NEXUS_VERSION,
 							protocol: NEXUS_PROTOCOL,
@@ -56,7 +56,7 @@ pipeline {
 						);
 					}
 					else {
-					error *** File: ${artifactPath}, could not be found ***;
+					error "*** File: ${artifactPath}, could not be found ***";
 					}
 				}
 			}
