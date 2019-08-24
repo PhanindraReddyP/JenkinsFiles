@@ -4,6 +4,14 @@ pipeline {
 		jdk 'JAVA8'
 		maven 'maven'
 	}
+	environment {
+		NEXUS_VERSION = "nexus3"
+		NEXUS_PROTOCOL = "http"
+		NEXUS_URL = "localhost:8081"
+		NEXUS_REPOSITORY = "gameoflife-repo"
+		NEXUS_CREDENTIAL_ID = "nexus_credentials"
+		
+	}
 	stages {
 		stage ('Clone') {
 			steps {
