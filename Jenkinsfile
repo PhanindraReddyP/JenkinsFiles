@@ -46,8 +46,8 @@ pipeline {
 							artifacts: [
 									[artifactId: gameoflife,
 									classifier: '',
-									file: "/var/lib/jenkins/workspace/game-of-life/gameoflife-web/target/gameoflife.war",
-									type: "war"]
+									file: gameoflife.war,
+									type: war]
 							]
 						);
 					}
