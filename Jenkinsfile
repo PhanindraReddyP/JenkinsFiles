@@ -22,7 +22,7 @@ pipeline {
 			steps {
 				sh 'mvn clean package'
 				echo 'Package Built'
-				archiveArtifacts '**/*.jar'
+				archiveArtifacts '**/*.war'
 			}
 		}
 		stage ('publish to Nexus') {
@@ -46,7 +46,7 @@ pipeline {
 							artifacts: [
 									[artifactId: 'gameoflife',
 									classifier: '',
-									type: war,
+									type: 'war',
 									file: '/var/lib/jenkins/workspace/game-of-life/gameoflife-web/target/gameoflife.war']
 							]
 						);
