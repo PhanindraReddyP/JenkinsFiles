@@ -44,10 +44,10 @@ pipeline {
 							repository: NEXUS_REPOSITORY,
 							credentials: NEXUS_CREDENTIAL_ID,
 							artifacts: [
-									[artifactId: pom.artifactId,
+									[artifactId: gameoflife,
 									classifier: '',
-									file: artifactPath,
-									type: pom.packaging]
+									file: war,
+									type: /var/lib/jenkins/workspace/game-of-life/gameoflife-web/target/gameoflife.war]
 							]
 						);
 					}
