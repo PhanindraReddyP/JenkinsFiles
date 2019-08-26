@@ -53,7 +53,7 @@ pipeline {
 		stage ('deploy to tomcat') {
 				steps {
 					script {
-						sh 'curl http://192.168.0.109:8081/repository/gameoflife-repo/com/gameoflife/gameoflife/2.0/gameoflife-2.0.war -o /usr/share/tomcat/webapps/'
+						sh 'curl http://192.168.0.109:8081/repository/gameoflife-repo/com/gameoflife/gameoflife/2.0/gameoflife-2.0.war -o /usr/share/tomcat/webapps/gameoflife.war'
 					}
 				}
 		}
