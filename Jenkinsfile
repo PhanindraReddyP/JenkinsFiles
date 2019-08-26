@@ -37,12 +37,12 @@ pipeline {
 						echo "*** File: ${artifactPath} ***"
 						nexusArtifactUploader artifacts: [[artifactId: 'gameoflife', classifier: '', file: '/var/lib/jenkins/workspace/game-of-life/gameoflife-web/target/gameoflife.war', type: 'war']], 
 							credentialsId: NEXUS_CREDENTIAL_ID, 
-							groupId: 'com.gameoflife2', 
+							groupId: 'com.gameoflife3', 
 							nexusUrl: NEXUS_URL, 
 							nexusVersion: NEXUS_VERSION, 
 							protocol: NEXUS_PROTOCOL, 
 							repository: NEXUS_REPOSITORY, 
-							version: '2.2'
+							version: '2.1'
 					}
 					else {
 					error "*** File: ${artifactPath}, could not be found ***";
