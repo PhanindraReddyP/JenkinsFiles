@@ -54,7 +54,7 @@ pipeline {
 				steps {
 					script {
 						sh 'sudo service tomcat stop'
-						sh 'sudo rm -rf /usr/share/tomcat/webapps/gameoflife-2.3.war
+						sh 'sudo rm -rf /usr/share/tomcat/webapps/gameoflife-2.3.war'
 						sh 'sudo curl http://192.168.0.109:8081/repository/gameoflife-repo/com/gameoflife3/gameoflife/2.4/gameoflife-2.4.war -o /usr/share/tomcat/webapps/gameoflife-2.4.war'
 						sh 'sudo ls'
 						sh 'sudo service tomcat start'
