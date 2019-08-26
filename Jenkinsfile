@@ -6,7 +6,7 @@ pipeline {
 	}
 	environment {
 		NEXUS_VERSION = "NEXUS3"
-		NEXUS_PROTOCOL = "HTTP"
+		NEXUS_PROTOCOL = "http"
 		NEXUS_URL = "192.168.43.199:8081"
 		NEXUS_REPOSITORY = "gameoflife-repo"
 		NEXUS_CREDENTIAL_ID = "nexus_credentials1"
