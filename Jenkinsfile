@@ -9,7 +9,7 @@ pipeline {
 		NEXUS_PROTOCOL = "http"
 		NEXUS_URL = "192.168.0.109:8081"
 		NEXUS_REPOSITORY = "gameoflife-repo"
-		NEXUS_CREDENTIAL_ID = "nexus_credentials"
+		NEXUS_CREDENTIAL_ID = "nexus_credentials1"
 	}
 	stages {
 		stage ('Clone') {
