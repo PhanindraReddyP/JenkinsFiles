@@ -42,7 +42,7 @@ pipeline {
 							nexusVersion: NEXUS_VERSION, 
 							protocol: NEXUS_PROTOCOL, 
 							repository: NEXUS_REPOSITORY, 
-							version: '2.1'
+							version: '2.3'
 					}
 					else {
 					error "*** File: ${artifactPath}, could not be found ***";
@@ -53,7 +53,7 @@ pipeline {
 		stage ('deploy to tomcat') {
 				steps {
 					script {
-						sh 'curl http://192.168.0.109:8081/repository/gameoflife-repo/com/gameoflife/gameoflife/2.0/gameoflife-2.0.war -o /usr/share/tomcat/webapps/gameoflife.war'
+						sh '''curl http://192.168.0.109:8081/repository/gameoflife-repo/com/gameoflife3/gameoflife/2.3/gameoflife-2.3.war -o /usr/share/tomcat/webapps/gameoflife-2.3.war'''
 					}
 				}
 		}
