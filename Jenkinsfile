@@ -39,15 +39,15 @@ pipeline {
 							nexusVersion: NEXUS_VERSION,
 							protocol: NEXUS_PROTOCOL,
 							nexusUrl: NEXUS_URL,
-							groupId: "com.gameoflife",
-							version: "2.0",
+							groupId: 'com.gameoflife',
+							version: '2.0',
 							repository: NEXUS_REPOSITORY,
 							credentials: NEXUS_CREDENTIAL_ID,
 							artifacts: [
-									[artifactId: 'gameoflife',
+									artifactId: 'gameoflife',
 									classifier: '',
 									type: 'war',
-									file: '/var/lib/jenkins/workspace/game-of-life/gameoflife-web/target/gameoflife.war']
+									file: '/var/lib/jenkins/workspace/game-of-life/gameoflife-web/target/gameoflife.war'
 							]
 						);
 					}
