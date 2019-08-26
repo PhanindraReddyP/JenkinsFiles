@@ -5,11 +5,11 @@ pipeline {
 		maven 'maven'
 	}
 	environment {
-		NEXUS_VERSION = "NEXUS3"
+		NEXUS_VERSION = "nexus3"
 		NEXUS_PROTOCOL = "http"
 		NEXUS_URL = "192.168.43.199:8081"
 		NEXUS_REPOSITORY = "gameoflife-repo"
-		NEXUS_CREDENTIAL_ID = "nexus_credentials1"
+		NEXUS_CREDENTIAL_ID = "nexus_credentials"
 	}
 	stages {
 		stage ('Clone') {
@@ -35,21 +35,14 @@ pipeline {
 					artifactExists = fileExists artifactPath;
 					if(artifactExists) {
 						echo "*** File: ${artifactPath} ***"
-						nexusArtifactUploader(
-							nexusVersion: NEXUS_VERSION,
-							protocol: NEXUS_PROTOCOL,
-							nexusUrl: NEXUS_URL,
-							groupId: 'com.gameoflife',
-							version: '2.0',
-							repository: NEXUS_REPOSITORY,
-							credentials: NEXUS_CREDENTIAL_ID,
-							artifacts: [
-									[artifactId: 'gameoflife',
-									classifier: '',
-									type: 'war',
-									file: '/var/lib/jenkins/workspace/game-of-life/gameoflife-web/target/gameoflife.war']
-							]
-						);
+						nexusArtifactUploader artifacts: [[artifactId: 'gameoflife', classifier: '', file: '/var/lib/jenkins/workspace/game-of-life/gameoflife-web/target/gameoflife.war', type: 'war']], 
+							credentialsId: NEXUS_CREDENTIAL_ID, 
+							groupId: 'com.gameoflife', 
+							nexusUrl: NEXUS_URL, 
+							nexusVersion: NEXUS_VERSION, 
+							protocol: NEXUS_PROTOCOL, 
+							repository: NEXUS_REPOSITORY, 
+							version: '2.0'
 					}
 					else {
 					error "*** File: ${artifactPath}, could not be found ***";
